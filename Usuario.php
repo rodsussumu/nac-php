@@ -1,14 +1,14 @@
 <?php
-    class Veiculo
+    class Usuario
     {
         private string $nome;
         private string $sexo;
-        private array $perfil;
+        private string $perfil;
         private string $data;
         private string $senha;
     
 
-    public function __construct(string $nome, string $sexo, array $perfil, string $data, string $senha) 
+    public function __construct(string $nome, string $sexo, string $perfil, string $data, string $senha) 
     {
         $this->nome = $nome;
         $this->sexo = $sexo;
