@@ -35,21 +35,21 @@ if(isset($_POST['submit'])) {
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <form class="bg-light rounded p-4 box-shadow" action="">
+        <form class="bg-light rounded p-4 box-shadow" method="POST" action="">
           <div class="form-group">
             <label for="clienteNome">Nome</label>
-            <input type="text" class="form-control" id="clienteNome" placeholder="Digite seu nome.">
+            <input type="text" class="form-control" name="nome" id="clienteNome" placeholder="Digite seu nome.">
           </div>
           <div class="form-group">
             <div class="block">
               <label for="inputSexo">Sexo</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline1" name="sexo" class="custom-control-input">
+              <input type="radio" id="customRadioInline1" name="sexo" value="Masculino" class="custom-control-input">
               <label class="custom-control-label" for="customRadioInline1">Masculino</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="customRadioInline2" name="sexo" class="custom-control-input">
+              <input type="radio" id="customRadioInline2" name="sexo" value="Feminino" class="custom-control-input">
               <label class="custom-control-label" for="customRadioInline2">Feminino</label>
             </div>
           </div>
@@ -58,15 +58,15 @@ if(isset($_POST['submit'])) {
             <label for="inputPerfil">Perfil</label>
             <div class="option">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Administrador">
+                <input type="checkbox" class="custom-control-input" name="perfil" id="Administrador" value="Administrador">
                 <label class="custom-control-label" for="Administrador">Administrador</label>
               </div>
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Contábil">
+                <input type="checkbox" class="custom-control-input" name="perfil" id="Contábil" value="Contábil">
                 <label class="custom-control-label" for="Contábil">Contábil</label>
               </div>
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Financeiro">
+                <input type="checkbox" class="custom-control-input" name="perfil" id="Financeiro" value="Financeiro">
                 <label class="custom-control-label" for="Financeiro">Financeiro</label>
               </div>
             </div>
@@ -77,7 +77,7 @@ if(isset($_POST['submit'])) {
 
                 <label for="inputData" class="block">Data de nascimento</label>
                 <div class="block">
-                    <input class="form-control" type="date" value="01/01/2020" id="inputData">
+                    <input class="form-control" name="data" type="date" value="01/01/2020" id="inputData">
                 </div>
               </div>
               <div class="col-4"></div>
@@ -87,28 +87,28 @@ if(isset($_POST['submit'])) {
           <div class="form-group row">
             <div class="col-8">
               <label for="inputSenha">Entre com uma senha para acesso</label>
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-              <small id="passwordHelpInline" class="text-muted" name="senha" id="inputSenha" placeholder="Senha">
+              <input type="password" id="inputPassword6" name="senha" class="form-control" aria-describedby="passwordHelpInline">
+              <small id="passwordHelpInline" class="text-muted" id="inputSenha" placeholder="Senha">
                 Sua senha deve conter de 4-10 caracteres.
               </small>
             </div>
             <div class="col-4"></div>
           </div>
 
-          <button type="button" class="btn btn-outline-primary">Cadastrar</button>
+          <button type="submit" name="submit" class="btn btn-outline-primary">Cadastrar</button>
 
           </form>
         </div>
     </section>
-    <?php
-            foreach($_SESSION["usuarios"] as $usuario) {?>
-            <tr>
-                <td><?= $usuario->getNome()?></td>
-                <td><?= $usuario->getSexo()?></td>
-                <td><?= $usuario->getPerfil()?></td>
-                <td><?= $usuario->getData()?></td>
-            </tr>
-        <?php } ?>
+          <?php
+              foreach($_SESSION["usuarios"] as $usuario) {?>
+              <tr>
+                  <td><?= $usuario->getNome()?></td>
+                  <td><?= $usuario->getSexo()?></td>
+                  <td><?= $usuario->getPerfil()?></td>
+                  <td><?= $usuario->getData()?></td>
+              </tr>
+          <?php } ?>
 </body>
 
 </html>
