@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
     $_SESSION["usuarios"][] = new Usuario($_POST["nome"], $_POST["sexo"], $_POST["perfil"], $_POST["data"], $_POST["senha"]);
 } else {
     $usuarios = [
-        new Usuario("Rodrigo", "Masculino", "Administrador", "22/08/2000", "123456")
+        new Usuario("Rodrigo", "Masculino", ["Administrador", " "], "22/08/2000", "123456")
     ];
     $_SESSION["usuarios"] = $usuarios;
 }
@@ -58,15 +58,15 @@ if(isset($_POST['submit'])) {
             <label for="inputPerfil">Perfil</label>
             <div class="option">
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Administrador" value="Administrador">
+                <input type="checkbox" class="custom-control-input" name="perfil[]" id="Administrador" value="Administrador">
                 <label class="custom-control-label" for="Administrador">Administrador</label>
               </div>
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Contábil" value="Contábil">
+                <input type="checkbox" class="custom-control-input" name="perfil[]" id="Contábil" value="Contábil">
                 <label class="custom-control-label" for="Contábil">Contábil</label>
               </div>
               <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" name="perfil" id="Financeiro" value="Financeiro">
+                <input type="checkbox" class="custom-control-input" name="perfil[]" id="Financeiro" value="Financeiro">
                 <label class="custom-control-label" for="Financeiro">Financeiro</label>
               </div>
             </div>
@@ -105,7 +105,9 @@ if(isset($_POST['submit'])) {
               <tr>
                   <td><?= $usuario->getNome()?></td>
                   <td><?= $usuario->getSexo()?></td>
-                  <td><?= $usuario->getPerfil()?></td>
+                  <?php foreach($usuario->getPerfil() as $perfil) {?>
+                    <td><?= $perfil ?></td>
+                  <?php } ?>
                   <td><?= $usuario->getData()?></td>
               </tr>
           <?php } ?>
