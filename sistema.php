@@ -1,3 +1,19 @@
+<?php
+require_once('funcoes.php');
+require_once('Usuario.php');
+
+session_start();
+
+if(isset($_POST['submit'])) {
+    $_SESSION["usuarios"][] = new Usuario($_POST["nome"], $_POST["sexo"], $_POST["perfil"], $_POST["data"], $_POST["senha"]);
+} else {
+    $usuarios = [
+        new Usuario("Rodrigo", "Masculino", "Administrador", "22/08/2000", "123456")
+    ];
+    $_SESSION["usuarios"] = $usuarios;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 <head>
@@ -32,5 +48,16 @@
 
             <input type="submit" class="btn-submit">
         </form>
+
+        <?php
+            foreach($_SESSION["usuarios"] as $usuario) {?>
+            <tr>
+                <td><?= $usuario->getNome()?></td>
+                <td><?= $usuario->getSexo()?></td>
+                <td><?= $usuario->getPerfil()?></td>
+                <td><?= $usuario->getData()?></td>
+            </tr>
+        <?php } ?>
+        
 </body>
 </html>
