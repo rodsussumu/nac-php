@@ -3,12 +3,12 @@
     {
         private string $nome;
         private string $sexo;
-        private string $perfil;
+        private array $perfil;
         private string $data;
         private string $senha;
     
 
-    public function __construct(string $nome, string $sexo, string $perfil, string $data, string $senha) 
+    public function __construct(string $nome, string $sexo, array $perfil, string $data, string $senha) 
     {
         $this->nome = $nome;
         $this->sexo = $sexo;
@@ -37,3 +37,4 @@
         return $this->senha;
     }
 }
+

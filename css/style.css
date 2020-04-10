@@ -1,30 +1,22 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
-}
-
-.form-control {
-    margin: 0 auto;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-label{
-    margin-bottom: 5px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-input {
-    margin-bottom: 20px;
-    height: 20px;
-    border: 1px solid black;
-    border-radius: 8px;
-}
-
-.option {
-    display: flex;
-}
+  }
+  
+  @media (max-width: 767px) {
+    #home-quote .display-4{
+      font-size: 2.5rem;
+    }
+    body {
+      padding-top: 0px;
+    }
+    .fixed-top {
+      position: relative;
+    }
+  }
+  
+  .lista-plano li + li {
+    border-top: 1px solid rgba(0,0,0,.2);
+  }
+  
+  .lista-plano li {
+    padding: 1rem;
+  }
