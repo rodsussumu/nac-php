@@ -1,12 +1,7 @@
 <?php
-require_once('funcoes.php');
-require_once('Usuario.php');
+  require_once('Usuario.php');
 
-session_start();
-
-if(isset($_POST['submit'])) {
-  $_SESSION["usuarios"][] = new Usuario($_POST["nome"], $_POST["sexo"], $_POST["perfil"], $_POST['data'], $_POST["senha"]);
-} 
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +22,11 @@ if(isset($_POST['submit'])) {
   <section class="container">
     <div class="my-5 text-center">
       <span class="h6 d-block">Cadastro de Usuário</span>
-      <h1 class="display-4 text-primary">Cadastra Mestre Andrey YODA</h1>
+      <h1 class="display-4 text-primary">NAC - Mestre Andrey YODA</h1>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <form class="bg-light rounded p-4 box-shadow" method="POST" action="">
+        <form class="bg-light rounded p-4 box-shadow" method="POST" action="adiciona-usuario.php">
           <div class="form-group">
             <label for="clienteNome">Nome</label>
             <input type="text" class="form-control" name="nome" id="clienteNome" placeholder="Digite seu nome.">
@@ -110,7 +105,7 @@ if(isset($_POST['submit'])) {
                         </tr>
                     </thead>
                     <?php
-                    if(isset($_SESSION['usuarios'])) {
+                    // if(isset($_SESSION['usuarios'])) {
                         foreach($_SESSION["usuarios"] as $usuario) {?>
                         <tr>
                             <td><?= $usuario->getNome()?></td>
@@ -124,7 +119,7 @@ if(isset($_POST['submit'])) {
                         </tr>
                     <?php 
                         }
-                      }
+                      // }
                     ?>
                 </table>
             </div>
