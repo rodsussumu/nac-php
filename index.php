@@ -2,6 +2,7 @@
   require_once('Usuario.php');
 
   session_start();
+  session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +106,7 @@
                         </tr>
                     </thead>
                     <?php
-                    // if(isset($_SESSION['usuarios'])) {
+                    if(isset($_SESSION['usuarios'])) {
                         foreach($_SESSION["usuarios"] as $usuario) {?>
                         <tr>
                             <td><?= $usuario->getNome()?></td>
@@ -119,7 +120,7 @@
                         </tr>
                     <?php 
                         }
-                      // }
+                      }
                     ?>
                 </table>
             </div>
