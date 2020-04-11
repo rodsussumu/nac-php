@@ -110,6 +110,7 @@ if(isset($_POST['submit'])) {
                         </tr>
                     </thead>
                     <?php
+                    if(isset($_SESSION['usuarios'])) {
                         foreach($_SESSION["usuarios"] as $usuario) {?>
                         <tr>
                             <td><?= $usuario->getNome()?></td>
@@ -121,7 +122,10 @@ if(isset($_POST['submit'])) {
                            </td>
                             <td><?= $usuario->getData()?></td>
                         </tr>
-                    <?php } ?>
+                    <?php 
+                        }
+                      }
+                    ?>
                 </table>
             </div>
         </div>
