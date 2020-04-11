@@ -13,7 +13,12 @@
         $this->nome = $nome;
         $this->sexo = $sexo;
         $this->perfil = $perfil;
-        $this->data = $data;
+        
+        $original_date = $data;
+        $timestamp = strtotime($original_date);
+        $new_date = date("d/m/Y", $timestamp);
+        $this->data = $new_date;
+
         $this->senha = $senha;
     }
 

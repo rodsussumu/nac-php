@@ -5,17 +5,12 @@ require_once('Usuario.php');
 session_start();
 
 if(isset($_POST['submit'])) {
-    $_SESSION["usuarios"][] = new Usuario($_POST["nome"], $_POST["sexo"], $_POST["perfil"], $_POST["data"], $_POST["senha"]);
-} else {
-    $usuarios = [
-        new Usuario("Rodrigo", "Masculino", ["Administrador", " "], "22/08/2000", "123456")
-    ];
-    $_SESSION["usuarios"] = $usuarios;
-}
+  $_SESSION["usuarios"][] = new Usuario($_POST["nome"], $_POST["sexo"], $_POST["perfil"], $_POST['data'], $_POST["senha"]);
+} 
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -25,6 +20,7 @@ if(isset($_POST['submit'])) {
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Sistema de controle de usuário</title>
 </head>
+
 
 <body>
 
@@ -77,7 +73,7 @@ if(isset($_POST['submit'])) {
 
                 <label for="inputData" class="block">Data de nascimento</label>
                 <div class="block">
-                    <input class="form-control" name="data" type="date" value="01/01/2020" id="inputData">
+                    <input class="form-control datepicker" name="data" type="date" value="01/01/2020" id="inputData">
                 </div>
               </div>
               <div class="col-4"></div>
@@ -100,17 +96,47 @@ if(isset($_POST['submit'])) {
           </form>
         </div>
     </section>
-          <?php
-              foreach($_SESSION["usuarios"] as $usuario) {?>
-              <tr>
-                  <td><?= $usuario->getNome()?></td>
-                  <td><?= $usuario->getSexo()?></td>
-                  <?php foreach($usuario->getPerfil() as $perfil) {?>
-                    <td><?= $perfil ?></td>
-                  <?php } ?>
-                  <td><?= $usuario->getData()?></td>
-              </tr>
-          <?php } ?>
+    
+    <section class="container">
+        <div class="mt-3" >
+            <div class="col-md-6 offset-md-3">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Perfil </th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <?php
+                        foreach($_SESSION["usuarios"] as $usuario) {?>
+                        <tr>
+                            <td><?= $usuario->getNome()?></td>
+                            <td><?= $usuario->getSexo()?></td>
+                            <td>
+                            <?php foreach($usuario->getPerfil() as $perfil) {?>
+                                 <?= $perfil ?> <br>
+                            <?php } ?>
+                           </td>
+                            <td><?= $usuario->getData()?></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div>
+        </div>
+    </section>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+      $('.datepicker').datepicker({
+          format: 'dd/mm/yyyy',                
+          language: 'pt-BR'
+      });
+  });
+</script>
 
 </html>
