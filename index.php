@@ -27,12 +27,12 @@
       <div class="col-md-6 offset-md-3">
         <form class="bg-light rounded p-4 box-shadow" method="POST" action="adiciona-usuario.php">
           <div class="form-group">
-            <label for="clienteNome">Nome</label>
-            <input type="text" class="form-control" name="nome" id="clienteNome" placeholder="Digite seu nome.">
+            <label for="clienteNome">Nome Completo:</label>
+            <input type="text" class="form-control" name="nome" id="clienteNome" placeholder="Digite seu nome." required>
           </div>
           <div class="form-group">
             <div class="block">
-              <label for="inputSexo">Sexo</label>
+              <label for="inputSexo">Sexo:</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" id="customRadioInline1" name="sexo" value="Masculino" class="custom-control-input">
@@ -45,17 +45,19 @@
           </div>
 
           <div class="form-group">
-            <label for="inputPerfil">Perfil</label>
-            <div class="option">
-              <div class="custom-control custom-checkbox">
+            <div class="block">
+              <label for="inputPerfil">Perfil:</label>
+            </div>
+            <div class="option form-check-inline">
+              <div class="custom-control custom-checkbox form-check-inline">
                 <input type="checkbox" class="custom-control-input" name="perfil[]" id="Administrador" value="Administrador">
                 <label class="custom-control-label" for="Administrador">Administrador</label>
               </div>
-              <div class="custom-control custom-checkbox">
+              <div class="custom-control custom-checkbox form-check-inline">
                 <input type="checkbox" class="custom-control-input" name="perfil[]" id="Contábil" value="Contábil">
                 <label class="custom-control-label" for="Contábil">Contábil</label>
               </div>
-              <div class="custom-control custom-checkbox">
+              <div class="custom-control custom-checkbox form-check-inline">
                 <input type="checkbox" class="custom-control-input" name="perfil[]" id="Financeiro" value="Financeiro">
                 <label class="custom-control-label" for="Financeiro">Financeiro</label>
               </div>
@@ -65,7 +67,7 @@
             <div class="form-group row">
               <div class="col-8">
 
-                <label for="inputData" class="block">Data de nascimento</label>
+                <label for="inputData" class="block">Data de nascimento:</label>
                 <div class="block">
                     <input class="form-control datepicker" name="data" type="date" value="01/01/2020" id="inputData">
                 </div>
@@ -76,8 +78,8 @@
 
           <div class="form-group row">
             <div class="col-8">
-              <label for="inputSenha">Entre com uma senha para acesso</label>
-              <input type="password" id="inputPassword6" name="senha" class="form-control" aria-describedby="passwordHelpInline">
+              <label for="inputSenha">Entre com uma senha para acesso:</label>
+              <input type="password" id="inputPassword6" name="senha" class="form-control" aria-describedby="passwordHelpInline" minlength="4" maxlength="10">
               <small id="passwordHelpInline" class="text-muted" id="inputSenha" placeholder="Senha">
                 Sua senha deve conter de 4-10 caracteres.
               </small>
@@ -86,7 +88,7 @@
           </div>
 
           <button type="submit" name="submit" class="btn btn-outline-primary">Cadastrar</button>
-
+          <button type="reset"  class="btn btn-outline-danger">Limpar</button>
           </form>
         </div>
     </section>
