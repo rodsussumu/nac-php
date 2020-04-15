@@ -20,8 +20,8 @@
 
   <section class="container">
     <div class="my-5 text-center">
-      <span class="h6 d-block">Cadastro de Usuário</span>
-      <h1 class="display-4 text-primary">NAC - Mestre Andrey YODA</h1>
+      <span class="h2 d-block">Cadastro de Usuário</span>
+      <h1 class="display-6 text-primary">NAC - Andrey YODA</h1>
     </div>
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -88,7 +88,6 @@
           </div>
 
           <button type="submit" name="submit" class="btn btn-outline-primary">Cadastrar</button>
-          <button type="reset"  class="btn btn-outline-danger">Limpar</button>
           </form>
         </div>
     </section>
