@@ -6,7 +6,6 @@
         private array $perfil;
         private string $data;
         private string $senha;
-    
 
     public function __construct(string $nome, string $sexo, array $perfil, string $data, string $senha) 
     {
