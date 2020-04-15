@@ -88,21 +88,19 @@
           </div>
 
           <button type="submit" name="submit" class="btn btn-outline-primary">Cadastrar</button>
-          
+
           <button type="reset"  class="btn btn-outline-warning">Limpar</button>
 
           <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseDeletar" aria-expanded="false" aria-controls="collapseExample">
-    Deletar Usuário
-  </button>
-  <p>
-  <div class="collapse" id="collapseDeletar">
-  <label for="clienteNome">Digite o nome do <strong>Usuário</strong> a ser deletado:</label>
-  <div class="row">
-    <input type="text" class="form-control col-8" placeholder="Digite o nome do usuário:">
-    <button type="button" class="btn btn-outline-danger ml-2" id="">Deletar</button>
-  </div>
-</div>
-</p>
+            Deletar Usuário
+          </button>
+              <div class="collapse mt-2" id="collapseDeletar">
+                <label for="clienteNome">Digite o nome do <strong>Usuário</strong> a ser deletado:</label>
+              <div class="row">
+                <input type="text" class="form-control col-8" placeholder="Digite o nome do usuário:">
+                <button type="button" class="btn btn-outline-danger ml-2" id="">Deletar</button>
+              </div>
+            </div>
           </form>
         </div>
     </section>
