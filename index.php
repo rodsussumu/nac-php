@@ -1,9 +1,6 @@
 <?php
   require_once('Usuario.php');
   session_start();
-  foreach(array_keys($_SESSION["usuarios"]) as $indice) {
-    echo $indice;
-  }
 ?>
 
 <!DOCTYPE html>
@@ -113,7 +110,7 @@
                     </thead>
                     <?php
                     if(isset($_SESSION['usuarios'])) {
-                        foreach($_SESSION["usuarios"] as $usuario) {?>
+                        foreach($_SESSION["usuarios"] as $key => $usuario) {?>
                         <tr>
                             <td><?= $usuario->getNome()?></td>
                             <td><?= $usuario->getSexo()?></td>
@@ -123,9 +120,7 @@
                             <?php } ?>
                            </td>
                             <td><?= $usuario->getData()?></td>
-                            <?php foreach(array_keys($_SESSION["usuarios"]) as $indice) {?>
-                            <td><a href="deleta-usuario.php?_indice=<?=$indice?>" class="btn btn-danger">Deletar</a></td>
-                            <?php } ?>
+                            <td><a href="deleta-usuario.php?_indice=<?= $key; ?>" class="btn btn-danger">Deletar</a></td>
                         </tr>
                     <?php 
                         }
