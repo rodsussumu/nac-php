@@ -2,19 +2,19 @@
 require_once('Usuario.php');
 session_start();
 
-function remover(array $usuario,
-                 string $nome): array
+function procuraIndice(array $usuario, string $nome)
     {
         $indice = array_search($nome, $usuario);
-        if ($indice !== false) {
-            unset( $usuario[$indice]);
-        }
-        return $usuario;
+    
+        return $indice;
     }   
 
 if (isset($_GET['_nome']))
-{
-    $usuario->remover($_GET['_nome']);
+{   
+    // print_r(array_keys($_SESSION["usuarios"]));
+    // print_r($_SESSION["usuarios"]);
+    unset($_SESSION["usuarios"]);
+
 }
 
-// header('Location: index.php');
+header('Location: index.php');
