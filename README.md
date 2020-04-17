@@ -2,12 +2,12 @@
 ## Prof. Andrey
 
 ```
-Abraão RM83983
-Geovanne RM82578
-Iago RM82448
-Luis RM80389
-Nicolas RM82331
-Rodrigo RM83888
+Abraão Azevedo RM83983
+Geovanne Amorim RM82578
+Iago Garcia RM82448
+Luis Guilherme RM80389
+Nicolas Nunes RM82331
+Rodrigo Tanaka RM83888
 ```
 
 # Executando projeto
