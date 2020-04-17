@@ -12,7 +12,7 @@ Rodrigo RM83888
 
 # Executando projeto
 
-No cmd, digite o comando
+No cmd, com o diretorio referente a pasta do projeto, digite o comando
 ```
 php -S localhost:80
 ```
