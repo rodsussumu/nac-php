@@ -17,7 +17,7 @@ Via terminal, com o diretorio referente a pasta do projeto, digite o comando
 php -S localhost:80
 ```
 
-O projeto será aberto na porta padrão, porta 80, e poderá ser acessado pelo link
+O projeto será aberto na porta 80, e poderá ser acessado pelo link
 ```
 http://localhost:80/Index.php
 ```
