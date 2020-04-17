@@ -112,15 +112,15 @@
                     if(isset($_SESSION['usuarios'])) {
                         foreach($_SESSION["usuarios"] as $key => $usuario) {?>
                         <tr>
-                            <td><?= $usuario->getNome()?></td>
-                            <td><?= $usuario->getSexo()?></td>
-                            <td>
+                            <td class="align-middle"><?= $usuario->getNome()?></td>
+                            <td class="align-middle"><?= $usuario->getSexo()?></td>
+                            <td class="align-middle">
                             <?php foreach($usuario->getPerfil() as $perfil) {?>
                                  <?= $perfil ?> <br>
                             <?php } ?>
                            </td>
-                            <td><?= $usuario->getData()?></td>
-                            <td><a href="deleta-usuario.php?_indice=<?= $key; ?>" class="btn btn-danger">Deletar</a></td>
+                            <td class="align-middle"><?= $usuario->getData()?></td>
+                            <td class="align-middle"><a href="deleta-usuario.php?_indice=<?= $key; ?>" class="btn btn-danger">Deletar</a></td>
                         </tr>
                     <?php 
                         }
